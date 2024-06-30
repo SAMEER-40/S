@@ -205,3 +205,61 @@ document.addEventListener('DOMContentLoaded', function() {
      const lastSection = document.getElementById('last-section');
     observer.observe(lastSection);
 });
+
+
+$(function () {
+
+    'use strict';
+
+
+
+    // ---- navigation mobile menu ---- //
+    function animMobileMenu() {
+
+        $('.nav__item .drop-menu').click(function (e) {
+            if ($(window).width() < 993) {
+                e.preventDefault();
+                $(this).next().slideToggle();
+            }
+        });
+
+        $('.burger').click(function () {
+            let timeAnim = 650;
+            $(this).toggleClass("active");
+            $('.nav__inner, .nav__menu, .nav__lang').toggleClass("active");
+            $(this).css({ 'pointer-events': 'none' });
+            setTimeout(function () {
+                $(this).css({ 'pointer-events': 'auto' });
+            }.bind(this), timeAnim);
+        });
+    }
+    animMobileMenu();
+});
+
+const navbar = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight * 5) {
+        navbar.style.position = 'absolute';
+        navbar.style.top = `${window.innerHeight * 5}px`; // Adjust top position to maintain flow
+    } else {
+        navbar.style.position = 'fixed';
+        navbar.style.top = '0';
+    }
+});
+
+// For the scrolling effect on nav links
+const navLinks = document.querySelectorAll('.nav__link');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight) {
+        navLinks.forEach(link => {
+            link.style.color = 'black';
+        });
+    } else {
+        navLinks.forEach(link => {
+            link.style.color = 'white';
+        });
+    }
+});
+

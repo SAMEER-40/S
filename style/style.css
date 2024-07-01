@@ -1351,7 +1351,7 @@ p,
     background: #6f858c;
 }
 .card1 {
- background-image: url('img/sale-promotion-ad-poster-design-template_53876-57694.jpg');
+ background-image: url('/img/sale-promotion-ad-poster-design-template_53876-57694.jpg');
   background-size: cover; /* similar to object-fit: cover */
   background-position: center; /* to center the image */
     max-height: 400px;
@@ -1364,7 +1364,7 @@ p,
   flex-direction: row;
 }
 .card3 {
-    background-image: url('img/spring-fashion-sale-banner-design-template_2239-1180.jpg');
+    background-image: url('/img/spring-fashion-sale-banner-design-template_2239-1180.jpg');
   background-size: cover; /* similar to object-fit: cover */
   background-position: center; /* to center the image */
   min-width: 330px;

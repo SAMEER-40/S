@@ -37,7 +37,7 @@
 	font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
-body {
+body,html {
   background: transparent;
     overflow-x: hidden;
 }

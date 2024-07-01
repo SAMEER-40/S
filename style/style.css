@@ -59,12 +59,7 @@ html, body {
 	height: auto;
 	padding: 0 var(--indent);
 }
-.header .contentk {
-	width: 100%;
-	height: auto;
-    left: 0;
-    background: 20px saddlebrown;
-}
+
 
 .parallax__wrapp {
 	width: 100%;
@@ -95,19 +90,37 @@ html, body {
 
 	opacity: 1;
 }
-
+@media(max-width: 480px) {
+  .header__bg_video {
+      	width: 100vw;
+      	height: auto;
+        max-height: 30vh;
+      	top: 7vh;
+  }
+    .tit {
+        font-size: 2vw;
+    }
+}
 video{
 	display: block;
-        border-radius: 35px;
-
+    border-radius: 35px;
 	position: relative;
 	width: 100%;
 	height: 100%;
-	object-fit:inherit;
+	object-fit:cover;
     z-index: 2;
 
 }
-
+.tit {
+	position: relative;
+	margin: 0;
+	font-size: var(--fz-big);
+	line-height: 1;
+	color: var(--pr-color);
+	text-transform: uppercase;
+	mix-blend-mode: difference;
+	z-index: 2;
+}
 
 .title {
 	position: relative;
@@ -121,12 +134,36 @@ video{
 }
 
 .title__wrapp {
-	display: flex;
-    background: red;
-	justify-content: flex-start;
+    display: flex;
     flex-direction: column;
-	align-items: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
 }
+
+.title__wrapp::before,
+.title__wrapp::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    gap: 20px;
+    width: 47vw; /* Adjust size as needed */
+    height: 50vh; /* Adjust size as needed */
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px; /* Adjust as needed */
+}
+
+.title__wrapp::before {
+    background-image: url('/...1/img/DeWatermark.ai_1719848593740.png');
+    right: 0;
+}
+
+.title__wrapp::after {
+    background-image: url('/...1/img/k.png');
+    left: 0;
+}
+
 
 .title .stroke {
 	display: block;
@@ -242,49 +279,6 @@ video{
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.portfolio .content,
-.portfolio__wrapp,
-.portfolio__list {
-	height: 100%;
-}
-
-.portfolio__list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 50px;
-	list-style: none;
-}
-
-.portfolio__item {
-  position: relative;
-  width: calc(50% - 25px);
-  height: calc(50% - 25px);
-}
-
-.portfolio__item-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 80%; /* Adjust this value to leave space for the text */
-  overflow: hidden;
-}
-
-.portfolio__item-img img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-        border-radius: 50%;
-
-}
-
-
-
-.portfolio__item:hover .portfolio__item-text {
-  opacity: 1; /* Show text on hover */
-}
-
 .approve .content,
 .approve__wrapp {
 	height: 100%;
@@ -351,7 +345,7 @@ video{
 }
 .stage {
       height: 300px;
-      width: 500px;
+      width: 400px;
       margin: auto;
       position: relative;
       top: 0;
@@ -387,6 +381,19 @@ video{
   color: whitesmoke;
   letter-spacing: -2px;
   text-shadow: 4px 0 10px rgba(0, 0, 0, 0.13);
+}
+@media(max-width: 895px) {
+    .layer:after {
+          font-size: 130px;
+
+    }
+}
+@media(max-width: 690px) {
+    .layer:after {
+          font-size: 75px;
+        margin-left: 2.5em;
+    }
+
 }
 
 .layer:nth-child(1):after {
@@ -697,6 +704,9 @@ p {
 .nav-divider {
     margin-top: 1em;
 }
+.col {
+    font-weight: 400;
+}
 .row {
     width: 100%;
     height: 20px;
@@ -733,7 +743,7 @@ p {
     text-transform: uppercase;
     display: inline-block;
     padding-left: -10%;
-    animation: marquee-animation 80s linear infinite;
+    animation: marquee-animation 50s linear infinite;
 }
 .marquert {
     position: absolute;
@@ -752,13 +762,14 @@ p {
     letter-spacing: -10px;
     color: #0a0808;
     mix-blend-mode: normal !important;
-    font-size: 12em;
+    font-size: 18vw;
     text-transform: uppercase;
     display: inline-block;
     padding-left: -10%;
     cursor: pointer;
+    position: relative;
 
-    animation: marquee-animation 80s linear infinite;
+    animation: marquee-animation 50s linear infinite;
 }
 .jj img {
   position: absolute;
@@ -1094,6 +1105,12 @@ p {
 	transform: translateY(50%);
 }
 
+@media(max-width: 786px) {
+    .col {
+        justify-content: space-between;
+    }
+
+}
 /* nav_media(max-width: 992px) ************************************/
 @media(max-width: 993px) {
 	.burger {
@@ -1292,11 +1309,17 @@ p {
   max-width: 2400px;
   margin: 0 auto;
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
+    transform: translateY(50px); /* Initial state: moved down */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation */
     background-image: linear-gradient(to bottom, #000000, #06131d, #696ea1, #f3f3f3, #F3f3f3);
 }
 
+.flex-cards.visible {
+  opacity: 1; /* When visible: fully opaque */
+  transform: translateY(0); /* When visible: no vertical translation */
+}
 
 p,
 .p1 {
@@ -1351,7 +1374,7 @@ p,
     background: #6f858c;
 }
 .card1 {
- background-image: url('/img/sale-promotion-ad-poster-design-template_53876-57694.jpg');
+ background-image: url('/...1/img/sale-promotion-ad-poster-design-template_53876-57694.jpg');
   background-size: cover; /* similar to object-fit: cover */
   background-position: center; /* to center the image */
     max-height: 400px;
@@ -1364,7 +1387,7 @@ p,
   flex-direction: row;
 }
 .card3 {
-    background-image: url('/img/spring-fashion-sale-banner-design-template_2239-1180.jpg');
+    background-image: url('/...1/img/spring-fashion-sale-banner-design-template_2239-1180.jpg');
   background-size: cover; /* similar to object-fit: cover */
   background-position: center; /* to center the image */
   min-width: 330px;
@@ -1380,4 +1403,64 @@ p,
   min-width: 330px;
   flex-wrap: wrap;
     max-height: 90%;
+}
+.imagee {
+    height: 20vh;
+
+    width: 20vw;
+    background: blue;
+    position: relative;
+}
+
+.mhde {
+  display: block;
+  margin: 2em auto;
+  margin-bottom: 3em;
+  width: 50px;
+  height: 50px;
+  border-radius: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.social {
+  text-align: center;
+  font-size: 2.5em;
+  color: #555;
+    position: relative;
+  overflow: hidden;
+}
+.social a {
+  color: inherit;
+  text-decoration: none;
+}
+.social i {
+  margin: 0.3em;
+  cursor: pointer;
+  transition: color 300ms ease, margin-top 300ms ease;
+  transform: translateZ(0);
+}
+.social i:hover {
+  margin-top: -1px;
+}
+.social i#twitter:hover {
+  color: #77DDF6;
+}
+.social i#github:hover {
+  color: black;
+}
+.social i#linkedin:hover {
+  color: #0177B5;
+}
+.social i#code:hover {
+  color: #29A329;
+}
+.social i#stack:hover {
+  color: #ED780E;
+}
+.social i#plus:hover {
+  color: #D43402;
+}
+.social i#mail:hover {
+  color: #F7B401;
 }

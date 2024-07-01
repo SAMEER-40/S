@@ -151,7 +151,6 @@ $(function () {
   scrollTrig();
 
   // Resize window
-  $(window).on('resize', debouncedResize);
 });
   
 document.addEventListener('DOMContentLoaded', function() {

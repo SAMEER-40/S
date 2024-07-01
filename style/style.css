@@ -37,7 +37,7 @@
 	font-feature-settings: 'pnum' on, 'lnum' on;
 }
 
-body,html {
+html, body {
   background: transparent;
     overflow-x: hidden;
 }
@@ -122,7 +122,8 @@ video{
 
 .title__wrapp {
 	display: flex;
-	justify-content: space-between;
+    background: red;
+	justify-content: flex-start;
     flex-direction: column;
 	align-items: flex-start;
 }
@@ -130,12 +131,14 @@ video{
 .title .stroke {
 	display: block;
 	color: transparent;
+    margin: 0;
 	-webkit-text-stroke: 1px var(--color-n3);
 }
 
 .title__img {
 	display: block;
-    top: 0;
+    margin: 0;
+    padding: 0;
 	width: 200px;
 	height: 200px;
 	opacity: 1;
@@ -146,6 +149,7 @@ video{
 	display: block;
 	width: 100%;
 	height: 100%;
+    margin: 0;
 }
 .title__txt{
     margin-top: 270px;
@@ -275,19 +279,7 @@ video{
 
 }
 
-.portfolio__item-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20%; /* Adjust this value to control the height of the text area */
-  background-color: rgb(17, 17, 178); /* Background color for text area */
-  color: #fff;
-  padding: 10px; /* Adjust as needed */
-  box-sizing: border-box;
-  transition: height 0.3s ease; /* Optional: Add transition for smooth height change */
-  opacity: 0; /* Optional: Initially hide text */
-}
+
 
 .portfolio__item:hover .portfolio__item-text {
   opacity: 1; /* Show text on hover */
@@ -596,8 +588,23 @@ video{
 p {
     font-family: helvetica, arial, sans serif;
 }
+@media (max-width: 1440px) {
+     .serv__list {
+                bottom: 25vh;
+                height: auto;
 
+     }
+
+}
  @media (max-width: 1024px) {
+     .title__txt{
+
+     }
+     .serv__list {
+                bottom: 35vh;
+                height: auto;
+
+     }
             .container {
                 width: 100vw;
                 height: auto;
@@ -633,6 +640,16 @@ p {
 
         /* Media Query for very small devices (e.g., mobile phones) */
         @media (max-width: 480px) {
+            .title__t{
+                height: 10vh;
+                width: auto;
+                background: black;
+                top: 0;
+            }
+            .serv__list{
+                bottom: 35vh;
+                height: auto;
+            }
             .card {
                 width: 90vw; /* Make cards even larger for better visibility on very small devices */
                 margin: 1em 0.2em; /* Adjust margin for spacing between cards */
@@ -718,7 +735,46 @@ p {
     padding-left: -10%;
     animation: marquee-animation 80s linear infinite;
 }
+.marquert {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    padding-top: 4em;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 3;
+}
 
+.marquert span {
+    font-family: "Neue Montreal";
+    font-weight: 400;
+    letter-spacing: -10px;
+    color: #0a0808;
+    mix-blend-mode: normal !important;
+    font-size: 12em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-left: -10%;
+    cursor: pointer;
+
+    animation: marquee-animation 80s linear infinite;
+}
+.jj img {
+  position: absolute;
+  display: block;
+  width: 350px;
+  height: 400px;
+  top: 50%;
+  right: 15%;
+  pointer-events: none;
+  clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+  transform: translateY(-50%);
+  transition: clip-path 0.4s ease, transform 0.4s ease;
+}
+.marquert:hover {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
 @keyframes marquee-animation {
     0% {
         transform: translate(0, 0);
@@ -733,6 +789,7 @@ p {
     top: 40px;
     width: 200px;
 }
+
 
 
 .conten {
@@ -777,13 +834,17 @@ p {
 	height: auto;
 	font-weight: 800;
 	font-size: 25px;
-	color: var(--color-black-blue);
+	background-color:transparent ;
 	text-decoration: none;
 	-webkit-transition: .3s;
 	-o-transition: .3s;
 	transition: .3s;
 }
-
+.logo img{
+    top:5px;
+    height: 50px;
+    width: 50px;
+}
 .nav__bl,
 .nav__menu {
 	display: -webkit-box;
@@ -876,6 +937,7 @@ p {
     color: black;
 
 }
+
 .nav__link.drop-menu {
 	position: relative;
 	padding-right: 22px;
@@ -989,7 +1051,10 @@ p {
 .burger.active span {
 	background-color: #0a0101;
 }
+.burger.scrolled {
+    background-color: black;
 
+}
 .burger span:nth-child(1) {
 	top: 0;
 }
@@ -1286,7 +1351,7 @@ p,
     background: #6f858c;
 }
 .card1 {
- background-image: url('/img/img/sale-promotion-ad-poster-design-template_53876-57694.jpg');
+ background-image: url('/...1/img/sale-promotion-ad-poster-design-template_53876-57694.jpg');
   background-size: cover; /* similar to object-fit: cover */
   background-position: center; /* to center the image */
     max-height: 400px;
@@ -1299,7 +1364,7 @@ p,
   flex-direction: row;
 }
 .card3 {
-    background-image: url('/img/img/spring-fashion-sale-banner-design-template_2239-1180.jpg');
+    background-image: url('/...1/img/spring-fashion-sale-banner-design-template_2239-1180.jpg');
   background-size: cover; /* similar to object-fit: cover */
   background-position: center; /* to center the image */
   min-width: 330px;

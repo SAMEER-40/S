@@ -89,7 +89,7 @@ $(function () {
         end: 'bottom top',
         scrub: true
       },
-      xPercent: -10,
+      xPercent: -20,
       ease: 'none'
     });
 
@@ -111,7 +111,7 @@ $(function () {
         end: 'bottom top',
         scrub: true
       },
-      xPercent: -10,
+      xPercent: -25,
       ease: 'none'
     });
 
@@ -122,7 +122,7 @@ $(function () {
         end: 'bottom top',
         scrub: true
       },
-      xPercent: 10,
+      xPercent: 25,
       ease: 'none'
     });
 
@@ -151,8 +151,9 @@ $(function () {
   scrollTrig();
 
   // Resize window
+
 });
-  
+
 document.addEventListener('DOMContentLoaded', function() {
      const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -243,7 +244,7 @@ window.addEventListener('scroll', () => {
 });
 
 // For the scrolling effect on nav links
-const navLinks = document.querySelectorAll('.nav__link');
+const navLinks = document.querySelectorAll( '.nav__link');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > window.innerHeight) {
@@ -257,3 +258,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
+
+const navL = document.querySelectorAll( '.burger');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight) {
+        navL.forEach(link => {
+            link.style.color = 'black';
+        });
+    } else {
+        navL.forEach(link => {
+            link.style.color = 'white';
+        });
+    }
+});

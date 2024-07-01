@@ -1,168 +1,169 @@
 $(function () {
-  'use strict';
+    'use strict';
 
-  // Lenis Smooth scroll
-  const lenis = new Lenis({
-    duration: 1.2,
-    infinite: false // Disable infinite scrolling
-  });
+    // Lenis Smooth scroll
+    const lenis = new Lenis({
+        duration: 1.2,
+        infinite: false // Disable infinite scrolling
+    });
 
-  function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
     requestAnimationFrame(raf);
-  }
 
-  requestAnimationFrame(raf);
+    // Integration Lenis on GSAP ScrollTrigger
+    lenis.on('scroll', ScrollTrigger.update);
 
-  // Integration Lenis on GSAP ScrollTrigger
-  lenis.on('scroll', ScrollTrigger.update);
-
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-
-  // Smooth scrolling for navigation links
-  $('.navbar a').on('click', function (e) {
-    e.preventDefault();
-    const target = $(this).attr('href');
-    lenis.scrollTo(target);
-  });
-
-  // Create animation
-  function scrollTrig() {
-    gsap.registerPlugin(ScrollTrigger);
-
-    let gsapAnim = gsap.utils.toArray('.gsap__anim');
-    gsapAnim.forEach(section => {
-      gsap.to(section, {
-        scrollTrigger: {
-          trigger: section,
-          start: 'bottom bottom',
-          end: 'bottom top',
-          scrub: true,
-          snap: true
-        },
-        yPercent: 100,
-        ease: 'none'
-      });
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
     });
 
-    let parallaxWrapp = gsap.utils.toArray('.parallax__wrapp');
-    parallaxWrapp.forEach(parallax => {
-      gsap.to(parallax, {
-        scrollTrigger: {
-          trigger: parallax,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true
-        },
-        yPercent: -20,
-        ease: 'none'
-      });
+    // Smooth scrolling for navigation links
+    $('.navbar a').on('click', function (e) {
+        e.preventDefault();
+        const target = $(this).attr('href');
+        lenis.scrollTo(target);
     });
 
-    gsap.to('.title-p', {
-      scrollTrigger: {
-        trigger: 'header.header',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      },
-      yPercent: 100
-    });
+    // Create animation
+    function scrollTrig() {
+        gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to('.title__img img', {
-      scrollTrigger: {
-        trigger: '.serv',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
-      },
-      rotate: 360,
-      ease: 'none'
-    });
+        let gsapAnim = gsap.utils.toArray('.gsap__anim');
+        gsapAnim.forEach(section => {
+            gsap.to(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'bottom bottom',
+                    end: 'bottom top',
+                    scrub: true,
+                    snap: true
+                },
+                yPercent: 100,
+                ease: 'none'
+            });
+        });
 
-    gsap.to('.title__t', {
-      scrollTrigger: {
-        trigger: '.serv',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      },
-      xPercent: -20,
-      ease: 'none'
-    });
+        let parallaxWrapp = gsap.utils.toArray('.parallax__wrapp');
+        parallaxWrapp.forEach(parallax => {
+            gsap.to(parallax, {
+                scrollTrigger: {
+                    trigger: parallax,
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                yPercent: -20,
+                ease: 'none'
+            });
+        });
 
-    gsap.to('.serv .stroke', {
-      scrollTrigger: {
-        trigger: '.serv',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      },
-      xPercent: 10,
-      ease: 'none'
-    });
+        gsap.to('.title-p', {
+            scrollTrigger: {
+                trigger: 'header.header',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            },
+            yPercent: 100
+        });
 
-    gsap.to('.serv__item:nth-child(1)', {
-      scrollTrigger: {
-        trigger: '.serv',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      },
-      xPercent: -25,
-      ease: 'none'
-    });
+        gsap.to('.title__img img', {
+            scrollTrigger: {
+                trigger: '.serv',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            },
+            rotate: 360,
+            ease: 'none'
+        });
 
-    gsap.to('.serv__item:nth-child(3)', {
-      scrollTrigger: {
-        trigger: '.serv',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      },
-      xPercent: 25,
-      ease: 'none'
-    });
+        gsap.to('.title__t', {
+            scrollTrigger: {
+                trigger: '.serv',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            },
+            xPercent: -20,
+            ease: 'none'
+        });
 
-    gsap.to('.portfolio__item-img img', {
-      scrollTrigger: {
-        trigger: '.portfolio',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true
-      },
-      scale: 1.3,
-      ease: 'none'
-    });
+        gsap.to('.serv .stroke', {
+            scrollTrigger: {
+                trigger: '.serv',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            },
+            xPercent: 10,
+            ease: 'none'
+        });
 
-    gsap.to('.approve__star', {
-      scrollTrigger: {
-        trigger: '.approve',
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true
-      },
-      rotate: 360,
-      ease: 'none'
-    });
-  }
-  scrollTrig();
+        gsap.to('.serv__item:nth-child(1)', {
+            scrollTrigger: {
+                trigger: '.serv',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            },
+            xPercent: -25,
+            ease: 'none'
+        });
 
-  // Resize window
+        gsap.to('.serv__item:nth-child(3)', {
+            scrollTrigger: {
+                trigger: '.serv',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            },
+            xPercent: 25,
+            ease: 'none'
+        });
+
+        gsap.to('.imagee', {
+            scrollTrigger: {
+                trigger: '.portfolio',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            },
+            scale: 1.3,
+            ease: 'none'
+        });
+
+        gsap.to('.approve__star', {
+            scrollTrigger: {
+                trigger: '.approve',
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true
+            },
+            rotate: 360,
+            ease: 'none'
+        });
+    }
+
+    scrollTrig();
+
+    // Resize window
 
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-     const observer = new IntersectionObserver(entries => {
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                 gsap.to("#overlay-dark", 2, {
+                gsap.to("#overlay-dark", 2, {
                     top: "-100%",
                     ease: "power3.inOut",
                     delay: 4,
-                   opacity: 1,
+                    opacity: 1,
                 });
 
                 gsap.from(".divider", 3, {
@@ -172,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     stagger: {
                         amount: 1,
                     },
-                  opacity: 1,
+                    opacity: 1,
                 });
 
                 gsap.from(".row > .col", 2, {
@@ -192,12 +193,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     delay: 4.5,
                 });
 
-                 observer.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 }); // Adjust the threshold as needed
+    }, {threshold: 0.5}); // Adjust the threshold as needed
 
-     const lastSection = document.getElementById('last-section');
+    const lastSection = document.getElementById('last-section');
     observer.observe(lastSection);
 });
 
@@ -205,7 +206,6 @@ document.addEventListener('DOMContentLoaded', function() {
 $(function () {
 
     'use strict';
-
 
 
     // ---- navigation mobile menu ---- //
@@ -222,12 +222,13 @@ $(function () {
             let timeAnim = 650;
             $(this).toggleClass("active");
             $('.nav__inner, .nav__menu, .nav__lang').toggleClass("active");
-            $(this).css({ 'pointer-events': 'none' });
+            $(this).css({'pointer-events': 'none'});
             setTimeout(function () {
-                $(this).css({ 'pointer-events': 'auto' });
+                $(this).css({'pointer-events': 'auto'});
             }.bind(this), timeAnim);
         });
     }
+
     animMobileMenu();
 });
 
@@ -244,7 +245,7 @@ window.addEventListener('scroll', () => {
 });
 
 // For the scrolling effect on nav links
-const navLinks = document.querySelectorAll( '.nav__link');
+const navLinks = document.querySelectorAll('.nav__link');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > window.innerHeight) {
@@ -259,7 +260,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-const navL = document.querySelectorAll( '.burger');
+const navL = document.querySelectorAll('.burger');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > window.innerHeight) {
@@ -272,3 +273,82 @@ window.addEventListener('scroll', () => {
         });
     }
 });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(".flex-cards");
+
+    const observerOptions = {
+    root: null, // Use the viewport as the container
+    rootMargin: "0px",
+    threshold: 0.1, // Trigger when 10% of the section is visible
+};
+
+    const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    entry.target.classList.add("visible");
+    observer.unobserve(entry.target); // Stop observing once the animation is applied
+}
+});
+}, observerOptions);
+
+    sections.forEach(section => {
+    observer.observe(section);
+});
+});
+
+ $(document).ready(function() {
+  $('i').hide();
+});
+
+$(window).on('load', function() {
+  var positions = {
+    twitter: $('#twitter').position(),
+    github: $('#github').position(),
+    stack: $('#stack').position(),
+    linkedin: $('#linkedin').position(),
+    code: $('#code').position(),
+    plus: $('#plus').position(),
+    mail: $('#mail').position(),
+    img: $('.mhde').position()
+  };
+
+  $('i').css({
+    position: 'absolute',
+    zIndex: '1',
+    top: positions.img.top + 100,
+    left: '47%'
+  });
+
+  $(window).on('scroll', function() {
+    if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+      $('i').show();
+
+      animateIcon($('#twitter'), positions.twitter, 250, 10, -10)
+        .then(() => animateIcon($('#github'), positions.github, 250, 10, -6))
+        .then(() => animateIcon($('#stack'), positions.stack, 250, 10, -3))
+        .then(() => animateIcon($('#linkedin'), positions.linkedin, 250, 10, 0))
+        .then(() => animateIcon($('#code'), positions.code, 250, 10, 3))
+        .then(() => animateIcon($('#plus'), positions.plus, 250, 10, 6))
+        .then(() => animateIcon($('#mail'), positions.mail, 250, 10, 10));
+
+      $(window).off('scroll'); // Remove the scroll event handler after triggering the animation
+    }
+  });
+});
+
+function animateIcon($icon, initialPos, duration, topOffset, leftOffset) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      $icon.animate({
+        top: initialPos.top + topOffset,
+        left: initialPos.left + leftOffset
+      }, duration, () => {
+        $icon.animate({
+          top: initialPos.top,
+          left: initialPos.left
+        }, duration / 2, resolve);
+      });
+    }, duration);
+  });
+}

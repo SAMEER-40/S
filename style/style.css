@@ -1374,7 +1374,7 @@ p,
     background: #6f858c;
 }
 .card1 {
- background-image: url('/S/img/sale-promotion-ad-poster-design-template_53876-57694.jpg');
+ background-image: url('img/sale-promotion-ad-poster-design-template_53876-57694.jpg');
   background-size: cover; /* similar to object-fit: cover */
   background-position: center; /* to center the image */
     max-height: 400px;

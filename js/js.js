@@ -100,7 +100,7 @@ $(function () {
                 end: 'bottom top',
                 scrub: true
             },
-            xPercent: 10,
+            xPercent: 25,
             ease: 'none'
         });
 

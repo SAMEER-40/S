@@ -147,7 +147,8 @@ video{
 
 .title .stroke {
 	display: block;
-	color: transparent;
+    font-weight: bolder;
+	color: #ff0202;
     margin: 0;
 	-webkit-text-stroke: 1px var(--color-n3);
 }
@@ -1215,11 +1216,15 @@ p {
         height: auto;
     }
 
-    .title__wrapp {
+    .cet {
         background-image: url("img/dddd.jpg");
-        width: 85vw;
-        height: 87vh;
-        background-position: center center;
+        width: 96vw;
+        height: auto;
+        background-position: center bottom;
+    }
+    .title__wrapp::before,
+    .title__wrapp::after {
+        background: transparent;
     }
 }
 
@@ -1268,12 +1273,12 @@ p {
 }
 @media (max-width: 620px) and (max-height: 932px) {
      .serv__list {
-        top: -36vh;
-        margin-top: auto;
-        height: auto;
+        top: -8vh;
+         height: auto;
+         margin: -3vh;;
     }
     .title__txt {
-        top: -15vh;
+        top: -11vh;
         }
 
 }

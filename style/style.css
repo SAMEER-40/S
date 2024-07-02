@@ -138,7 +138,7 @@ video{
     content: "";
     position: absolute;
     z-index: -2;
-    gap: 20px;
+    gap: 10px;
     width: 47vw; /* Adjust size as needed */
     height: 50vh; /* Adjust size as needed */
     background-size: cover;
@@ -155,7 +155,14 @@ video{
     background-image: url('img/k.png');
     left: 0;
 }
+ @media (max-width: 1786px) {
 
+     .title__wrapp::before,
+     .title__wrapp::after {
+        margin: 2em;
+     }
+ }
+@media (max-width: 1786px) {
 
 .title .stroke {
 	display: block;

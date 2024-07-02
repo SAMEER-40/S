@@ -652,7 +652,7 @@ p {
         margin-top: auto;
     }
 
-
+}
     @media (max-width: 1024px) {
         .title__txt {
 
@@ -1482,5 +1482,3 @@ p {
         background: blue;
         position: relative;
     }
-}
-

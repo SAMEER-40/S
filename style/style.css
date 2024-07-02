@@ -95,10 +95,11 @@ html, body {
       	width: 100vw;
       	height: auto;
         max-height: 30vh;
-      	top: 7vh;
+      	top: 17vh;
   }
-    .tit {
-        font-size: 2vw;
+    .content h1 {
+        font-size: 13vw;
+        bottom: 3vh;
     }
 }
 video{
@@ -111,16 +112,7 @@ video{
     z-index: 2;
 
 }
-.tit {
-	position: relative;
-	margin: 0;
-	font-size: var(--fz-big);
-	line-height: 1;
-	color: var(--pr-color);
-	text-transform: uppercase;
-	mix-blend-mode: difference;
-	z-index: 2;
-}
+
 
 .title {
 	position: relative;
@@ -570,6 +562,7 @@ video{
 }
 
 .card {
+    position: relative;
     margin: 1em; /* Spacing between cards */
     padding: 20px;
     background: white;
@@ -577,7 +570,7 @@ video{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex: 0 0 auto; /* Prevent flex items from shrinking */
-    width: 500px; /* Fixed width for cards */
+    width: 90%; /* Fixed width for cards */
 }
 
 .card img {
@@ -603,6 +596,9 @@ p {
      }
 
 }
+
+
+
  @media (max-width: 1024px) {
      .title__txt{
 
@@ -646,7 +642,7 @@ p {
         }
 
         /* Media Query for very small devices (e.g., mobile phones) */
-        @media (max-width: 480px) {
+@media (max-width: 480px) {
             .title__t{
                 height: 10vh;
                 width: auto;
@@ -1380,6 +1376,13 @@ p,
     max-height: 400px;
   min-width: 330px;
   height: 340px;
+}
+@media(min-width: 2039px) {
+    .card1 {
+max-height: 800px;
+  min-width: 430px;
+  height: 550px;
+    }
 }
 .card2 {
   min-width: 330px;

@@ -126,17 +126,6 @@ $(function () {
             ease: 'none'
         });
 
-        gsap.to('.imagee', {
-            scrollTrigger: {
-                trigger: '.portfolio',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true
-            },
-            scale: 1.3,
-            ease: 'none'
-        });
-
         gsap.to('.approve__star', {
             scrollTrigger: {
                 trigger: '.approve',

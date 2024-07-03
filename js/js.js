@@ -3,7 +3,7 @@ $(function () {
 
     // Lenis Smooth scroll
     const lenis = new Lenis({
-        duration: 100,
+        duration: 1.2,
         infinite: false // Disable infinite scrolling
     });
 
@@ -39,7 +39,7 @@ $(function () {
                     trigger: section,
                     start: 'bottom bottom',
                     end: 'bottom top',
-                    scrub: true,
+                    scrub: 0.5,
                     snap: true
                 },
                 yPercent: 100,
@@ -54,7 +54,7 @@ $(function () {
                     trigger: parallax,
                     start: 'top top',
                     end: 'bottom top',
-                    scrub: true
+                    scrub: 1
                 },
                 yPercent: -20,
                 ease: 'none'
@@ -66,7 +66,7 @@ $(function () {
                 trigger: 'header.header',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true
+                scrub: 1
             },
             yPercent: 100
         });
@@ -76,7 +76,7 @@ $(function () {
                 trigger: '.serv',
                 start: 'top bottom',
                 end: 'bottom top',
-                scrub: true
+                scrub: 1
             },
             rotate: 360,
             ease: 'none'
@@ -87,7 +87,7 @@ $(function () {
                 trigger: '.serv',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true
+                scrub: 1
             },
             xPercent: -20,
             ease: 'none'
@@ -98,7 +98,7 @@ $(function () {
                 trigger: '.serv',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true
+                scrub: 1
             },
             xPercent: 25,
             ease: 'none'
@@ -109,7 +109,7 @@ $(function () {
                 trigger: '.serv',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true
+                scrub: 1
             },
             xPercent: -25,
             ease: 'none'
@@ -120,7 +120,7 @@ $(function () {
                 trigger: '.serv',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true
+                scrub: 1
             },
             xPercent: 25,
             ease: 'none'
@@ -131,7 +131,7 @@ $(function () {
                 trigger: '.approve',
                 start: 'top bottom',
                 end: 'bottom top',
-                scrub: true
+                scrub: 1
             },
             rotate: 360,
             ease: 'none'

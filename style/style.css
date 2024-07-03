@@ -752,8 +752,9 @@ p {
 
     }
     .kk {
+        background-position: center;
         position: relative;
-        top: 40px;
+        top: 11px;
         width: 200px;
     }
 

@@ -3,7 +3,7 @@ $(function () {
 
     // Lenis Smooth scroll
     const lenis = new Lenis({
-        duration: 0,
+        duration: 100,
         infinite: false // Disable infinite scrolling
     });
 

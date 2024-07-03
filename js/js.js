@@ -141,6 +141,7 @@ $(function () {
     scrollTrig();
 
     // Resize window
+
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -184,17 +185,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
+    }, {threshold: 0.5}); // Adjust the threshold as needed
 
     const lastSection = document.getElementById('last-section');
     observer.observe(lastSection);
 });
 
+
 $(function () {
+
     'use strict';
+
 
     // ---- navigation mobile menu ---- //
     function animMobileMenu() {
+
         $('.nav__item .drop-menu').click(function (e) {
             if ($(window).width() < 993) {
                 e.preventDefault();
@@ -206,9 +211,9 @@ $(function () {
             let timeAnim = 650;
             $(this).toggleClass("active");
             $('.nav__inner, .nav__menu, .nav__lang').toggleClass("active");
-            $(this).css({ 'pointer-events': 'none' });
+            $(this).css({'pointer-events': 'none'});
             setTimeout(function () {
-                $(this).css({ 'pointer-events': 'auto' });
+                $(this).css({'pointer-events': 'auto'});
             }.bind(this), timeAnim);
         });
     }
@@ -228,102 +233,55 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// For the scrolling effect on nav links
 const navLinks = document.querySelectorAll('.nav__link');
-const navL = document.querySelectorAll('.logo, .burger');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > window.innerHeight) {
         navLinks.forEach(link => {
             link.style.color = 'black';
         });
-        navL.forEach(link => {
-            link.style.color = 'blue';
-        });
     } else {
         navLinks.forEach(link => {
             link.style.color = 'white';
         });
+    }
+});
+
+
+const navL = document.querySelectorAll('.burger');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight) {
+        navL.forEach(link => {
+            link.style.color = 'black';
+        });
+    } else {
         navL.forEach(link => {
             link.style.color = 'white';
         });
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll(".flex-cards");
 
     const observerOptions = {
-        root: null, // Use the viewport as the container
-        rootMargin: "0px",
-        threshold: 0.1, // Trigger when 10% of the section is visible
-    };
+    root: null, // Use the viewport as the container
+    rootMargin: "0px",
+    threshold: 0.1, // Trigger when 10% of the section is visible
+};
 
     const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-                observer.unobserve(entry.target); // Stop observing once the animation is applied
-            }
-        });
-    }, observerOptions);
+    entries.forEach(entry => {
+    if (entry.isIntersecting) {
+    entry.target.classList.add("visible");
+    observer.unobserve(entry.target); // Stop observing once the animation is applied
+}
+});
+}, observerOptions);
 
     sections.forEach(section => {
-        observer.observe(section);
-    });
+    observer.observe(section);
 });
-
-$(document).ready(function () {
-    $('i').hide();
 });
-
-$(window).on('load', function () {
-    var positions = {
-        twitter: $('#twitter').position(),
-        github: $('#github').position(),
-        stack: $('#stack').position(),
-        linkedin: $('#linkedin').position(),
-        code: $('#code').position(),
-        plus: $('#plus').position(),
-        mail: $('#mail').position(),
-        img: $('.mhde').position()
-    };
-
-    $('i').css({
-        position: 'absolute',
-        zIndex: '1',
-        top: positions.img.top + 100,
-        left: '47%'
-    });
-
-    $(window).on('scroll', function () {
-        if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
-            $('i').show();
-
-            animateIcon($('#twitter'), positions.twitter, 250, 10, -10)
-                .then(() => animateIcon($('#github'), positions.github, 250, 10, -6))
-                .then(() => animateIcon($('#stack'), positions.stack, 250, 10, -3))
-                .then(() => animateIcon($('#linkedin'), positions.linkedin, 250, 10, 0))
-                .then(() => animateIcon($('#code'), positions.code, 250, 10, 3))
-                .then(() => animateIcon($('#plus'), positions.plus, 250, 10, 6))
-                .then(() => animateIcon($('#mail'), positions.mail, 250, 10, 10));
-
-            $(window).off('scroll'); // Remove the scroll event handler after triggering the animation
-        }
-    });
-});
-
-function animateIcon($icon, initialPos, duration, topOffset, leftOffset) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            $icon.animate({
-                top: initialPos.top + topOffset,
-                left: initialPos.left + leftOffset
-            }, duration, () => {
-                $icon.animate({
-                    top: initialPos.top,
-                    left: initialPos.left
-                }, duration / 2, resolve);
-            });
-        }, duration);
-    });
-}

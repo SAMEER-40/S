@@ -1,4 +1,4 @@
-/* general *******************************************/
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Raleway+Dots&display=swap'); /* general *******************************************/
 /****************************************************/
 :root {
     --deep-seaweed: #0B1714;
@@ -95,9 +95,9 @@ height: auto;
 }
 
 .content {
-	width: 100%;
-	height: auto;
-	padding: 0 var(--indent);
+	/*width: 100%;*/
+	/*height: auto;*/
+	/*padding: 0 var(--indent);*/
 }
 
 .parallax__wrapp {
@@ -301,6 +301,88 @@ video{
 .serv__item:hover .serv__item-img {
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Raleway+Dots&display=swap');
+
+.menu a {
+	text-decoration: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.menu {
+	padding: 10rem 0 20vh;
+	width: 90vw;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	counter-reset: menucounter;
+}
+
+.menu__item {
+	flex: none;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	padding-left: 5rem;
+}
+
+
+
+.menu__item:hover::before {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.menu__item-text {
+	position: relative;
+	cursor: pointer;
+	padding: .5rem;
+	display: block;
+	overflow: hidden;
+	font-size: 6vw;
+}
+
+.menu__item:hover {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.hover-reveal {
+	position: absolute;
+	z-index: -1;
+	width: 200px;
+	height: 300px;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	opacity: 0;
+}
+
+.hover-reveal__inner {
+	overflow: hidden;
+}
+
+.hover-reveal__img,
+.hover-reveal__inner {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.hover-reveal__img {
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+
+
 
 .approve .content,
 .approve__wrapp {
@@ -642,6 +724,7 @@ p {
     .divider {
         width: 100%;
         height: 1px;
+        opacity: 0.5;
         background: #ffffff;
         margin: 0.2em 0;
     }
@@ -721,6 +804,7 @@ p {
         padding-left: -10%;
         cursor: pointer;
         position: relative;
+	counter-reset: menucounter;
 
         animation: marquee-animation 50s linear infinite;
     }

@@ -21,7 +21,7 @@ $(function () {
         gsap.ticker.add((time) => {
             lenis.raf(time * 1000);
         });
-
+    }
         // Create animation
         function scrollTrig() {
             gsap.registerPlugin(ScrollTrigger);
@@ -135,7 +135,7 @@ $(function () {
         scrollTrig();
 
         // Resize window
-    }
+
 
 });
 

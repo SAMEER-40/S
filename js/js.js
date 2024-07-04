@@ -134,10 +134,12 @@ $(function () {
 
         scrollTrig();
 
-        // Resize window
+        // Resize windowif
+
 
 
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver(entries => {
@@ -482,3 +484,5 @@ let direction = {x: mousePosCache.x-mousepos.x, y: mousePosCache.y-mousepos.y};
 window.addEventListener('mousemove', ev => mousepos = getMousePos(ev));
 const scroll = new LocomotiveScroll({el: menuEl, smooth: true});
 new Menu(menuEl);
+
+

@@ -134,12 +134,7 @@ $(function () {
     scrollTrig();
 
     // Resize window
-    const debouncedResize = _.debounce(onWindowResize, 500);
-	function onWindowResize() {
-		console.log('Window resized!');
-		location.reload();
-	}
-	$(window).on('resize', debouncedResize);
+
 
 });
 

@@ -95,9 +95,9 @@ height: auto;
 }
 
 .content {
-	/*width: 100%;*/
-	/*height: auto;*/
-	/*padding: 0 var(--indent);*/
+	width: 100%;
+	height: auto;
+	padding: 0 var(--indent);
 }
 
 .parallax__wrapp {
@@ -300,29 +300,6 @@ video{
 
 .serv__item:hover .serv__item-img {
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Raleway+Dots&display=swap');
-
-.menu a {
-	text-decoration: none;
-	outline: none;
-	cursor: pointer;
-}
-
-.menu {
-	padding: 10rem 0 20vh;
-	width: 90vw;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	text-align: right;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	counter-reset: menucounter;
 }
 
 .menu__item {
@@ -1196,14 +1173,7 @@ p {
         display: flex;
         gap: 15px;
         flex-wrap: wrap;
-        transform: translateY(50px); /* Initial state: moved down */
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation */
-        background-image: linear-gradient(to bottom, #000000, #06131d, #696ea1, #f3f3f3, #F3f3f3);
-    }
-
-    .flex-cards.visible {
-        opacity: 1; /* When visible: fully opaque */
-        transform: translateY(0); /* When visible: no vertical translation */
+        background-image: linear-gradient(to bottom, #000000, #06131d, #696ea1, #adadf8, #F3f3f3);
     }
 
     p,

@@ -258,29 +258,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-    document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".flex-cards");
-
-    const observerOptions = {
-    root: null, // Use the viewport as the container
-    rootMargin: "0px",
-    threshold: 0.4, // Trigger when 10% of the section is visible
-};
-
-    const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-    if (entry.isIntersecting) {
-    entry.target.classList.add("visible");
-    observer.unobserve(entry.target); // Stop observing once the animation is applied
-}
-});
-}, observerOptions);
-
-    sections.forEach(section => {
-    observer.observe(section);
-});
-});
-
 
 
     // Map number x from range [a, b] to [c, d]

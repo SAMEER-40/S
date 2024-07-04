@@ -1,140 +1,141 @@
 $(function () {
     'use strict';
+    if (window.innerWidth > 767) {
 
-    // Lenis Smooth scroll
-    const lenis = new Lenis({
-        duration: 1.2,
-        infinite: false // Disable infinite scrolling
-    });
-
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // Integration Lenis on GSAP ScrollTrigger
-    lenis.on('scroll', ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-    });
-
-    // Create animation
-    function scrollTrig() {
-        gsap.registerPlugin(ScrollTrigger);
-
-        let gsapAnim = gsap.utils.toArray('.gsap__anim');
-        gsapAnim.forEach(section => {
-            gsap.to(section, {
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'bottom bottom',
-                    end: 'bottom top',
-                    scrub: true,
-                    snap: true
-                },
-                yPercent: 100,
-                ease: 'none'
-            });
+        // Lenis Smooth scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            infinite: false // Disable infinite scrolling
         });
 
-        let parallaxWrapp = gsap.utils.toArray('.parallax__wrapp');
-        parallaxWrapp.forEach(parallax => {
-            gsap.to(parallax, {
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Integration Lenis on GSAP ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update);
+
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+
+        // Create animation
+        function scrollTrig() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            let gsapAnim = gsap.utils.toArray('.gsap__anim');
+            gsapAnim.forEach(section => {
+                gsap.to(section, {
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'bottom bottom',
+                        end: 'bottom top',
+                        scrub: true,
+                        snap: true
+                    },
+                    yPercent: 100,
+                    ease: 'none'
+                });
+            });
+
+            let parallaxWrapp = gsap.utils.toArray('.parallax__wrapp');
+            parallaxWrapp.forEach(parallax => {
+                gsap.to(parallax, {
+                    scrollTrigger: {
+                        trigger: parallax,
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: 3
+                    },
+                    yPercent: -20,
+                    ease: 'none'
+                });
+            });
+
+            gsap.to('.title-p', {
                 scrollTrigger: {
-                    trigger: parallax,
+                    trigger: 'header.header',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                yPercent: 100
+            });
+
+            gsap.to('.title__img img', {
+                scrollTrigger: {
+                    trigger: '.serv',
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                rotate: 360,
+                ease: 'none'
+            });
+
+            gsap.to('.title__t', {
+                scrollTrigger: {
+                    trigger: '.serv',
                     start: 'top top',
                     end: 'bottom top',
                     scrub: 3
                 },
-                yPercent: -20,
+                xPercent: -20,
                 ease: 'none'
             });
-        });
 
-        gsap.to('.title-p', {
-            scrollTrigger: {
-                trigger: 'header.header',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true
-            },
-            yPercent: 100
-        });
+            gsap.to('.serv .stroke', {
+                scrollTrigger: {
+                    trigger: '.serv',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                xPercent: 25,
+                ease: 'none'
+            });
 
-        gsap.to('.title__img img', {
-            scrollTrigger: {
-                trigger: '.serv',
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-            },
-            rotate: 360,
-            ease: 'none'
-        });
+            gsap.to('.serv__item:nth-child(1)', {
+                scrollTrigger: {
+                    trigger: '.serv',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 3
+                },
+                xPercent: -25,
+                ease: 'none'
+            });
 
-        gsap.to('.title__t', {
-            scrollTrigger: {
-                trigger: '.serv',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: 3
-            },
-            xPercent: -20,
-            ease: 'none'
-        });
+            gsap.to('.serv__item:nth-child(3)', {
+                scrollTrigger: {
+                    trigger: '.serv',
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 3
+                },
+                xPercent: 25,
+                ease: 'none'
+            });
 
-        gsap.to('.serv .stroke', {
-            scrollTrigger: {
-                trigger: '.serv',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: true
-            },
-            xPercent: 25,
-            ease: 'none'
-        });
+            gsap.to('.approve__star', {
+                scrollTrigger: {
+                    trigger: '.approve',
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: 3
+                },
+                rotate: 360,
+                ease: 'none'
+            });
+        }
 
-        gsap.to('.serv__item:nth-child(1)', {
-            scrollTrigger: {
-                trigger: '.serv',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: 3
-            },
-            xPercent: -25,
-            ease: 'none'
-        });
+        scrollTrig();
 
-        gsap.to('.serv__item:nth-child(3)', {
-            scrollTrigger: {
-                trigger: '.serv',
-                start: 'top top',
-                end: 'bottom top',
-                scrub: 3
-            },
-            xPercent: 25,
-            ease: 'none'
-        });
-
-        gsap.to('.approve__star', {
-            scrollTrigger: {
-                trigger: '.approve',
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 3
-            },
-            rotate: 360,
-            ease: 'none'
-        });
+        // Resize window
     }
-
-    scrollTrig();
-
-    // Resize window
-
 
 });
 

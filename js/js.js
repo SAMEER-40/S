@@ -1,6 +1,6 @@
 $(function () {
     'use strict';
-    if (window.innerWidth > 767) {
+    if (window.innerWidth > 1080) {
 
         // Lenis Smooth scroll
         const lenis = new Lenis({
@@ -50,7 +50,7 @@ $(function () {
                         end: 'bottom top',
                         scrub: 3
                     },
-                    yPercent: -20,
+                    yPercent: 4,
                     ease: 'none'
                 });
             });
@@ -105,7 +105,7 @@ $(function () {
                     end: 'bottom top',
                     scrub: 3
                 },
-                xPercent: -25,
+                xPercent: -15,
                 ease: 'none'
             });
 
@@ -116,7 +116,7 @@ $(function () {
                     end: 'bottom top',
                     scrub: 3
                 },
-                xPercent: 25,
+                xPercent: 15,
                 ease: 'none'
             });
 
@@ -221,7 +221,7 @@ $(function () {
 const navbar = document.querySelector('nav');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > window.innerHeight * 7) {
+    if (window.scrollY > window.innerHeight * 5) {
         navbar.style.position = 'absolute';
         navbar.style.top = `${window.innerHeight * 5}px`; // Adjust top position to maintain flow
     } else {

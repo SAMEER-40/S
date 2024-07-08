@@ -2063,7 +2063,7 @@ a.tag,
 
 .marq > .fsdd img {
   height: clamp(50%, 10vw, 100%);
-  max-width: 150px;
+  max-width: 100vw;
   max-height: 100px;
   object-fit: contain;
   display: block;
@@ -2106,8 +2106,8 @@ a.tag,
 }
 .marq2 > .fsdd2 img {
   height: clamp(50%, 10vw, 100%);
-  max-width: 150px;
-  max-height: 100px;
+  max-width: 100vw;
+  max-height: 200px;
   object-fit: contain;
   display: block;
 }
@@ -2242,55 +2242,55 @@ scrollbar-width: none;
 }
 
 .slip2 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("img/gemini1.jpeg.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .slip3 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("img/Gemini_Generated_Image_v3jmqgv3jmqgv3jm.jpeg");
     background-size: cover;
     background-position: center;
 }
 
 .slip4 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("/style/img/photo12.webp");
     background-size: cover;
     background-position: center;
 }
 
 .slip5 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("/style/img/photo3.webp");
     background-size: cover;
     background-position: center;
 }
 
 .slip6 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("/style/img/photo9.webp");
     background-size: cover;
     background-position: center;
 }
 
 .slip7 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("/style/img/photo18.webp");
     background-size: cover;
     background-position: center;
 }
 
 .slip8 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("/style/img/photo20.webp");
     background-size: cover;
     background-position: center;
 }
 
 .slip9 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("img/gemini5.jpeg.jpg");
     background-size: cover;
     background-position: center;
 }
 
 .slip10 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("img/gemini5.jpeg.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -2302,13 +2302,13 @@ scrollbar-width: none;
 }
 
 .slip12 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("/style/img/photo19.webp");
     background-size: cover;
     background-position: center;
 }
 
 .slip13 {
-    background-image: url("img/Gemini_Generated_Image_hm2qq4hm2qq4hm2q.jpeg");
+    background-image: url("/style/img/photo9.webp");
     background-size: cover;
     background-position: center;
 }
@@ -2864,3 +2864,36 @@ scrollbar-width: none;
 
 
 
+
+.social-icon {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #06b6d4;
+}
+
+#footer-claro {
+    background-color: transparent;
+}
+
+#footer-claro .text-slate-100 {
+    font-family: 'Inspiration', cursive;
+    font-size: 2rem;
+}
+
+#footer-claro .text-slate-400 {
+    color: #b0b0b0;
+}
+
+#footer-claro .social-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+}
+
+#footer-claro .social-icon:hover svg {
+    fill: #06b6d4;
+}

@@ -485,3 +485,16 @@ new Menu(menuEl);
 
 
 
+
+
+const sam = document.getElementById("sam");
+
+window.onmousemove = (e) => {
+    const precent = e.clientX / window.innerWidth;
+    sam.animate({
+        transform: `translate(${precent * sam.offsetWidth * -1}px, -50%)`,},{
+fill: "forwards",
+duration:3000,
+}
+);
+};

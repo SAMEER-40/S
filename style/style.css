@@ -84,6 +84,10 @@ html, body {
     padding: var(--container--block-padding) var(--container--inline-padding);
 }
 
+ .btnwallet {
+    justify-content: space-between;
+}
+
 .wrapp {
     position: relative;
     width: 100%;
@@ -245,7 +249,7 @@ video {
 
 .cet {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     padding: 0 30px;
 }
 
@@ -2312,9 +2316,21 @@ scrollbar-width: none;
     background-size: cover;
     background-position: center;
 }
-.scroll_port > .slip h3 {
+.scroll_port > .slip1 h3,
+.scroll_port > .slip2 h3,
+.scroll_port > .slip3 h3 ,
+.scroll_port > .slip4 h3 ,
+.scroll_port > .slip5 h3,
+.scroll_port > .slip6 h3 ,
+.scroll_port > .slip7 h3 ,
+.scroll_port > .slip8 h3 ,
+.scroll_port > .slip9 h3,
+.scroll_port > .slip10 h3 ,
+.scroll_port > .slip11 h3 ,
+.scroll_port > .slip12 h3 ,
+.scroll_port > .slip13 h3{
     font-weight: bolder;
-    margin-top:15em;
+    margin-top:16em;
 }
 
 .scroll_port > .slip1,
@@ -2466,6 +2482,9 @@ scrollbar-width: none;
         top: -9vh;
         margin-top: auto;
         height: auto;
+    }
+    .btnwallet{
+
     }
 
 }
@@ -2877,6 +2896,8 @@ scrollbar-width: none;
 
 #footer-claro {
     background-color: transparent;
+    overflow: auto;
+    scrollbar-width: none;
 }
 
 #footer-claro .text-slate-100 {
